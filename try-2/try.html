@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FRC Scouting Web Sitesi</title>
+  <style>
+    /* CSS Stillerini buraya ekleyin */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: red; /* Arka plan rengi kırmızı */
+    }
+    
+    h1 {
+      color: #333;
+      text-align: center;
+      padding: 20px 0;
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    form {
+      margin-bottom: 20px;
+    }
+    
+    label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 5px;
+    }
+    
+    input[type="text"], textarea, select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+    
+    input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    
+    th, td {
+      padding: 10px;
+      border-bottom: 1px solid #ccc;
+    }
+    
+    th {
+      background-color: #f2f2f2;
+      text-align: left;
+    }
+    
+    .kirmizi {
+      color: red;
+      font-weight: bold;
+    }
+    
+    .yesil {
+      color: green;
+      font-weight: bold;
+    }
+  </style>
+  <script>
+    function verileriGoster() {
+      var takimAdi = document.getElementById('takimAdi').value;
+      var takimNumarasi = document.getElementById('takimNumarasi').value;
+      var otonom = document.getElementById('otonom').value;
+      var teleop = document.getElementById('teleop').value;
+      var kirmiziKart = document.getElementById('kirmiziKart').value;
+      
+      var table = document.getElementById('veriTablosu');
+      var row = table.insertRow(-1);
+      var takimAdiCell = row.insertCell(0);
+      var takimNumarasiCell = row.insertCell(1);
+      var otonomCell = row.insertCell(2);
+      var teleopCell = row.insertCell(3);
+      var kirmiziKartCell = row.insertCell(4);
+      
+      takimAdiCell.innerHTML = takimAdi;
+      takimNumarasiCell.innerHTML = takimNumarasi;
+      otonomCell.innerHTML = otonom;
+      teleopCell.innerHTML = teleop;
+      kirmiziKartCell.innerHTML = kirmiziKart;
+      
+      if (kirmiziKart === 'yedi') {
+        kirmiziKartCell.classList.add('kirmizi');
+      } else if (kirmiziKart === 'yemedi') {
+        kirmiziKartCell.classList.add('yesil');
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1>7444 SCOUTİNG</h1>
+  
+  <div class="container">
+    <h2>Takım Bilgileri</h2>
+  
+    <form>
+      <label for="takimAdi">Takım Adı:</label>
+      <input type="text" id="takimAdi" name="takimAdi">
+    
+      <label for="takimNumarasi">Takım Numarası:</label>
+      <input type="text" id="takimNumarasi" name="takimNumarasi">
+    
+      <label for="otonom">Otonom Performansı:</label>
+      <textarea id="otonom" name="otonom"></textarea>
+    
+      <label for="teleop">Teleop Performansı:</label>
+      <textarea id="teleop" name="teleop"></textarea>
+    
+      <label for="kirmiziKart">Kırmızı Kart:</label>
+      <select id="kirmiziKart" name="kirmiziKart">
+        <option value="yedi">Yedi</option>
+        <option value="yemedi">Yemedi</option>
+      </select>
+    
+      <input type="button" value="Verileri Kaydet" onclick="verileriGoster()">
+    </form>
+  
+    <h2>Verileri Gör</h2>
+  
+    <table id="veriTablosu">
+      <tr>
+        <th>Takım Adı</th>
+        <th>Takım Numarası</th>
+        <th>Otonom Performansı</th>
+        <th>Teleop Performansı</th>
+        <th>Kırmızı Kart</th>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>

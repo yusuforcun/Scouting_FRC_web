@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FRC Robot Takımı Scouting</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #f2f2f2;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    input[type="checkbox"] {
+      margin-top: 10px;
+    }
+
+    input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    tr:hover {
+      background-color: #f5f5f5;
+    }
+  </style>
+</head>
+<body>
+  <h1>FRC Robot Takımı Scouting</h1>
+  <form>
+    <label for="team-number">Takım Numarası:</label>
+    <input type="text" id="team-number" name="team-number" required>
+
+    <label for="team-score">Takım Puanı:</label>
+    <input type="text" id="team-score" name="team-score">
+
+    <h3>Otonom</h3>
+    <label for="autonomous-cube-count">Küp Sayısı:</label>
+    <input type="number" id="autonomous-cube-count" name="autonomous-cube-count">
+
+    <label for="autonomous-cone-count">Koni Sayısı:</label>
+    <input type="number" id="autonomous-cone-count" name="autonomous-cone-count">
+
+    <h3>Teleop</h3>
+    <label for="teleop-cube-count">Küp Sayısı:</label>
+    <input type="number" id="teleop-cube-count" name="teleop-cube-count">
+
+    <label for="teleop-cone-count">Koni Sayısı:</label>
+    <input type="number" id="teleop-cone-count" name="teleop-cone-count">
+
+    <label for="notes">Notlar:</label>
+    <textarea id="notes" name="notes"></textarea>
+
+    <input type="submit" value="Kaydet">
+  </form>
+
+  <h2>Verileri Gör</h2>
+  <form>
+    <label for="team-number-view">Takım Numarası:</label>
+    <input type="text" id="team-number-view" name="team-number-view" required>
+
+    <input type="submit" value="Görüntüle">
+  </form>
+</body>
+</html>
